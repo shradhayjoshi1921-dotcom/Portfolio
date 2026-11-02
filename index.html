@@ -1,263 +1,425 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b12">
-  <meta name="description" content="Shradhay — Agentic Coder and Full-Stack Developer building practical web applications.">
-  <meta name="keywords" content="Shradhay, Agentic Coder, Full Stack Developer, PHP, MySQL, JavaScript, Campus Placement Portal, LogicBloom ERP">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a0d">
+  <meta name="description" content="Shradhay is a Computer Engineering graduate, BTech CSE student, and Agentic Coder building practical digital products with code, creativity, automation, and AI.">
+  <meta name="keywords" content="Shradhay, Agentic Coder, Computer Engineering, BTech CSE, Full-stack development, AI-powered applications">
   <meta name="author" content="Shradhay">
-  <title>Shradhay | Agentic Coder & Full-Stack Developer</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shradhay — Digital Builder & Agentic Coder">
+  <meta property="og:description" content="I build digital experiences that think, adapt, and scale.">
+  <title>Shradhay — Digital Builder &amp; Agentic Coder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="config.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Intro overlay: click the </> symbol or choose Skip intro. -->
-  <div class="intro-screen" id="introScreen" aria-label="Portfolio intro">
-    <div class="intro-grid" aria-hidden="true"></div>
-    <div class="intro-center">
-      <p class="intro-kicker"><span class="pulse-dot"></span> INITIALIZING DEVELOPER PROFILE</p>
-      <button class="intro-symbol" id="introSymbol" type="button" aria-label="Reveal Shradhay's profile">
-        <span aria-hidden="true">&lt;/&gt;</span>
-      </button>
-      <p class="intro-hint">Click the symbol to enter</p>
-      <button class="skip-intro" id="skipIntro" type="button">Skip intro <span aria-hidden="true">↗</span></button>
-    </div>
-    <span class="intro-corner intro-corner-left" aria-hidden="true">PORTFOLIO.EXE</span>
-    <span class="intro-corner intro-corner-right" aria-hidden="true">BUILD · DEBUG · SHIP</span>
+  <div class="ambient-layer" aria-hidden="true">
+    <div class="cursor-glow" id="cursorGlow"></div>
   </div>
 
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="#home" class="logo" aria-label="Shradhay home"><span>&lt;</span>SHRADHAY<span>/&gt;</span></a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#home" aria-label="Shradhay — home">
+        <span class="brand-mark" aria-hidden="true">S<span>.</span></span>
+<span class="brand-name" data-person-brand>SHRADHAY</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="primaryNav" aria-expanded="false">
+        <span></span><span></span>
       </button>
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav-links" id="primaryNav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="#home" aria-current="location">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </nav>
-      <a href="#contact" class="nav-btn">Let's Talk <span aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
   <main id="main">
-    <section id="home" class="hero section-anchor">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-container">
-        <div class="hero-content reveal">
-          <div class="status"><span class="status-dot"></span> Open to learning & opportunities</div>
-          <p class="eyebrow"><span>01</span> AGENTIC CODER · FULL-STACK DEVELOPER</p>
-          <h1>I build.<br><span>Debug.</span> Ship.</h1>
-          <p class="hero-description">
-            I'm <strong>Shradhay</strong> — a Computer Engineering student and agentic coder focused on building practical web applications, solving technical problems, and turning ideas into working software.
-          </p>
+    <section class="hero section-anchor" id="home" aria-labelledby="hero-title">
+      <div class="hero-backdrop" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb-one"></div>
+        <div class="hero-orb hero-orb-two"></div>
+        <span class="hero-crosshair crosshair-one"></span>
+        <span class="hero-crosshair crosshair-two"></span>
+      </div>
+      <div class="page-container hero-layout">
+        <div class="hero-copy">
+          <p class="hero-hello" data-hero-intro>Hey, I’m <strong data-person-name>Shradhay</strong>.</p>
+          <p class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> DIGITAL BUILDER <span class="eyebrow-dot">/</span> AGENTIC CODER</p>
+          <h1 class="hero-title" id="hero-title">
+            <span class="title-line"><span>I Build Digital</span></span>
+            <span class="title-line"><span>Experiences That</span></span>
+            <span class="title-line title-line-accent"><span>Think, Adapt &amp; Scale.</span></span>
+          </h1>
+          <p class="hero-role">Computer Engineering graduate <span aria-hidden="true">|</span> BTech CSE Student <span aria-hidden="true">|</span> Agentic Coder</p>
+          <p class="hero-description">I transform ideas into intelligent digital products using code, creativity, automation, and AI.</p>
           <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">Explore my work <span aria-hidden="true">↘</span></a>
-            <a href="https://github.com/shradhayjoshi1921-dotcom" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary magnetic" href="#projects" data-magnetic>
+              <span>Explore My Work</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" /></svg>
+            </a>
+            <a class="button button-quiet magnetic" href="#contact" data-magnetic>
+              <span>Let’s Connect</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M6 5h9v9" /></svg>
+            </a>
           </div>
-          <div class="hero-socials">
-            <a href="https://www.linkedin.com/in/shradhay-joshi-4b28b73a7/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <span aria-hidden="true">·</span>
-            <a href="https://github.com/shradhayjoshi1921-dotcom" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <span aria-hidden="true">·</span>
-            <a href="mailto:shradhayjoshi1921@gmail.com">Email ↗</a>
+          <div class="hero-footnote">
+            <span class="footnote-mark" aria-hidden="true">✳</span>
+            <span>CODE <i>/</i> CREATIVITY <i>/</i> APPLIED AI</span>
           </div>
         </div>
 
-        <div class="hero-visual reveal">
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-          <div class="profile-card">
-            <div class="profile-card-top">
-              <div class="window-dots"><i></i><i></i><i></i></div>
-              <span>developer.js</span><span class="live-label">● ONLINE</span>
+        <div class="hero-visual" data-parallax>
+          <div class="visual-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="visual-coordinate coordinate-top" aria-hidden="true">PROFILE / 01</span>
+          <span class="visual-coordinate coordinate-bottom" aria-hidden="true">BUILT WITH INTENT</span>
+          <span class="tech-float tech-float-react" aria-hidden="true"><i>◈</i> React.js</span>
+          <span class="tech-float tech-float-ai" aria-hidden="true"><i>✳</i> AI + code</span>
+          <span class="tech-float tech-float-php" aria-hidden="true"><i>⌘</i> PHP</span>
+          <figure class="portrait-card">
+            <div class="portrait-frame">
+              <!-- Replace this intentionally blank image with your own portrait at assets/images/profile.jpg. Keep the path or update src, and change the alt text when adding your photo. -->
+              <img class="profile-photo" src="assets/images/profile.jpg" alt="Blank portrait placeholder. Add Shradhay’s personal photograph here." width="800" height="1000" fetchpriority="high">
+              <span class="portrait-edge portrait-edge-top" aria-hidden="true"></span>
+              <span class="portrait-edge portrait-edge-bottom" aria-hidden="true"></span>
             </div>
-            <div class="code-body" aria-label="Developer profile code">
-              <p><span class="line-no">01</span><span class="code-purple">const</span> <span class="code-blue">developer</span> = {</p>
-              <p><span class="line-no">02</span>&nbsp; name: <span class="code-green">"Shradhay"</span>,</p>
-              <p><span class="line-no">03</span>&nbsp; role: <span class="code-green">"Agentic Coder"</span>,</p>
-              <p><span class="line-no">04</span>&nbsp; focus: <span class="code-green">"Full-Stack Web Apps"</span>,</p>
-              <p><span class="line-no">05</span>&nbsp; stack: [<span class="code-green">"PHP"</span>, <span class="code-green">"JS"</span>, <span class="code-green">"SQL"</span>],</p>
-              <p><span class="line-no">06</span>&nbsp; mindset: <span class="code-green">"Learn. Build. Improve."</span></p>
-              <p><span class="line-no">07</span>};</p>
-              <p class="code-spacer"><span class="line-no">08</span></p>
-              <p><span class="line-no">09</span><span class="code-blue">console</span>.<span class="code-purple">log</span>(<span class="code-green">"Let's build."</span>);</p>
-              <p class="cursor-row"><span class="line-no">10</span><span class="cursor"></span></p>
-            </div>
-          </div>
-          <div class="floating-chip chip-one"><span>⌘</span> Problem solving</div>
-          <div class="floating-chip chip-two"><span>⚡</span> AI-assisted workflow</div>
+            <figcaption><span>PERSONAL IMAGE</span><code>assets/images/profile.jpg</code></figcaption>
+          </figure>
+          <div class="visual-caption" aria-hidden="true"><span class="caption-pulse"></span> A SPACE FOR THE HUMAN BEHIND THE BUILD</div>
         </div>
       </div>
-      <a class="scroll-cue" href="#about"><span></span> Scroll to explore</a>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to the About section"><span class="scroll-cue-line"></span><span>SCROLL TO EXPLORE</span><span class="scroll-cue-index">01 — 06</span></a>
     </section>
 
-    <section id="about" class="section section-anchor">
-      <div class="section-container">
-        <div class="section-heading">
-          <p class="section-number">02 — ABOUT</p>
-          <h2>Engineering mindset.<br><span>Builder mentality.</span></h2>
+    <section class="section about-section section-anchor" id="about" aria-labelledby="about-title">
+      <div class="page-container">
+        <div class="section-kicker" data-reveal><span>01</span><span class="kicker-rule"></span> THE PERSON BEHIND THE BUILDS</div>
+        <div class="about-intro">
+          <h2 class="display-heading" id="about-title" data-reveal>Beyond the <span>Code.</span></h2>
+          <div class="about-story" data-reveal>
+            <p class="story-lead">I’m passionate about building practical digital solutions that make complex ideas feel simple.</p>
+            <p>From full-stack applications to AI-powered workflows, I enjoy exploring how thoughtful engineering can turn a rough idea into a useful, scalable product.</p>
+            <p>My path combines a Computer Engineering foundation, a BTech CSE journey, hands-on problem-solving, and agentic coding—with curiosity at the center of every build.</p>
+          </div>
         </div>
-        <div class="about-grid">
-          <div class="about-text">
-            <p class="large-text">I enjoy turning ideas into real, functional software.</p>
-            <p>I've completed a Diploma in Computer Engineering and am pursuing B.Tech in Computer Science & Engineering through lateral entry.</p>
-            <p>My work focuses on full-stack web development, database-backed applications, debugging, and building systems that solve practical problems.</p>
-            <p>I use agentic and AI-assisted coding workflows to move faster while staying responsible for understanding the code, testing behavior, and making engineering decisions.</p>
-            <div class="signature"><span aria-hidden="true">⚡</span> Agentic Coder <span class="signature-divider">/</span> Code Craftsman</div>
-          </div>
-          <div class="about-stats">
-            <article class="stat-card"><strong>03</strong><span>Featured projects</span></article>
-            <article class="stat-card"><strong>10+</strong><span>Technologies explored</span></article>
-            <article class="stat-card"><strong>A+</strong><span>Java training grade</span></article>
-            <article class="stat-card"><strong>91%</strong><span>Job Ready Program score</span></article>
-          </div>
+
+        <div class="about-metrics" aria-label="Portfolio overview">
+          <article class="metric-card" data-reveal>
+            <strong class="metric-value" data-count="3" data-count-pad="2">03</strong>
+            <span>Featured projects</span>
+          </article>
+          <article class="metric-card" data-reveal>
+            <strong class="metric-value" data-count="4" data-count-pad="2">04</strong>
+            <span>Skill domains</span>
+          </article>
+          <article class="metric-card" data-reveal>
+            <strong class="metric-value" data-count="2" data-count-pad="2">02</strong>
+            <span>Education stages</span>
+          </article>
+          <div class="metric-note" data-reveal><span class="note-cross">✳</span><p>Grounded in fundamentals.<br>Always looking for what’s next.</p></div>
+        </div>
+
+        <div class="about-pillars">
+          <article class="pillar-card" data-reveal>
+            <span class="pillar-index">A / FOUNDATION</span>
+            <h3>Computer Engineering Diploma</h3>
+            <p>A practical technical foundation and the starting point for a deeper journey into software.</p>
+          </article>
+          <article class="pillar-card" data-reveal>
+            <span class="pillar-index">B / IN PROGRESS</span>
+            <h3>BTech Computer Science &amp; Engineering</h3>
+            <p>Continuing to build depth in computer science, software development, and systems thinking.</p>
+          </article>
+          <article class="pillar-card" data-reveal>
+            <span class="pillar-index">C / APPROACH</span>
+            <h3>Agentic coding, with judgment</h3>
+            <p>Exploring AI-assisted development while staying hands-on with the decisions, code, and problem-solving.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section skills-section section-anchor">
-      <div class="section-container">
-        <div class="section-heading centered">
-          <p class="section-number">03 — TECH STACK</p>
-          <h2>Tools I use to <span>build things.</span></h2>
-          <p class="section-subtitle">A practical toolkit for building, testing, and improving web applications.</p>
+    <section class="section skills-section section-anchor" id="skills" aria-labelledby="skills-title">
+      <div class="page-container">
+        <div class="section-heading-row" data-reveal>
+          <div>
+            <div class="section-kicker"><span>02</span><span class="kicker-rule"></span> TECHNICAL TOOLKIT</div>
+            <h2 class="display-heading" id="skills-title">Tools for the <span>work.</span></h2>
+          </div>
+          <p class="section-intro">A growing, hands-on toolkit for building and shipping web applications. No vanity scores—just the technologies I work with.</p>
         </div>
+
         <div class="skills-grid">
-          <article class="skill-card"><div class="skill-icon">&lt;/&gt;</div><h3>Languages</h3><div class="skill-list"><span>Java</span><span>JavaScript</span><span>PHP</span><span>Python</span><span>C</span><span>C++</span><span>SQL</span></div></article>
-          <article class="skill-card"><div class="skill-icon">◈</div><h3>Frontend</h3><div class="skill-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span><span>AJAX</span><span>Responsive UI</span></div></article>
-          <article class="skill-card"><div class="skill-icon">⌘</div><h3>Backend</h3><div class="skill-list"><span>PHP</span><span>Sessions</span><span>Authentication</span><span>WebSockets</span><span>Role-based access</span></div></article>
-          <article class="skill-card"><div class="skill-icon">▣</div><h3>Database</h3><div class="skill-list"><span>MySQL</span><span>MariaDB</span><span>SQL queries</span><span>CRUD</span><span>Database design</span></div></article>
-          <article class="skill-card"><div class="skill-icon">⌁</div><h3>Tools</h3><div class="skill-list"><span>Git</span><span>GitHub</span><span>VS Code</span><span>XAMPP</span><span>phpMyAdmin</span></div></article>
-          <article class="skill-card skill-card-featured"><div class="skill-icon">⚡</div><h3>Engineering</h3><div class="skill-list"><span>Debugging</span><span>Problem solving</span><span>OOP</span><span>DSA fundamentals</span><span>System thinking</span><span>AI-assisted development</span></div></article>
+          <article class="skill-card" data-reveal>
+            <div class="skill-card-top"><span class="skill-index">01</span><span class="skill-symbol" aria-hidden="true">&lt;/&gt;</span></div>
+            <h3>Frontend</h3>
+            <p>Interfaces, structure &amp; responsive experiences.</p>
+            <div class="skill-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>Bootstrap</span></div>
+          </article>
+          <article class="skill-card" data-reveal>
+            <div class="skill-card-top"><span class="skill-index">02</span><span class="skill-symbol" aria-hidden="true">{ }</span></div>
+            <h3>Backend</h3>
+            <p>Application logic, data &amp; API foundations.</p>
+            <div class="skill-tags"><span>PHP</span><span>MySQL</span><span>Node.js</span><span>Express.js</span><span>REST APIs</span></div>
+          </article>
+          <article class="skill-card" data-reveal>
+            <div class="skill-card-top"><span class="skill-index">03</span><span class="skill-symbol" aria-hidden="true">λ</span></div>
+            <h3>Programming</h3>
+            <p>Core languages and foundational problem-solving.</p>
+            <div class="skill-tags"><span>Java</span><span>Python</span><span>C++</span><span>Data Structures</span></div>
+          </article>
+          <article class="skill-card" data-reveal>
+            <div class="skill-card-top"><span class="skill-index">04</span><span class="skill-symbol" aria-hidden="true">⌘</span></div>
+            <h3>Tools</h3>
+            <p>Everyday tools for building, testing &amp; collaboration.</p>
+            <div class="skill-tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>XAMPP</span><span>MongoDB</span></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section projects-section section-anchor">
-      <div class="section-container">
-        <div class="section-heading">
-          <p class="section-number">04 — SELECTED PROJECTS</p>
-          <h2>Ideas turned into <span>working builds.</span></h2>
-          <p class="section-subtitle">A few projects that show the kind of problems I like solving.</p>
+    <section class="section projects-section section-anchor" id="projects" aria-labelledby="projects-title">
+      <div class="page-container">
+        <div class="section-heading-row projects-heading" data-reveal>
+          <div>
+            <div class="section-kicker"><span>03</span><span class="kicker-rule"></span> SELECTED BUILDS</div>
+            <h2 class="display-heading" id="projects-title">Ideas into <span>software.</span></h2>
+          </div>
+          <p class="section-intro">A selection of products shaped around real workflows, useful features, and the details that make software feel considered.</p>
         </div>
 
-        <article class="project-card project-featured">
-          <div class="project-art placement-art" aria-hidden="true">
-            <div class="art-window">
-              <div class="art-window-top"><i></i><i></i><i></i><span>career-intelligence.app</span></div>
-              <div class="art-dashboard">
-                <div class="art-sidebar"><b></b><i></i><i></i><i></i></div>
-                <div class="art-main"><div class="art-heading"></div><div class="art-metrics"><i></i><i></i><i></i></div><div class="art-chart"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="art-lines"><i></i><i></i><i></i></div></div>
+        <div class="project-grid">
+          <article class="project-card project-card-featured" data-reveal>
+            <div class="project-art project-art-logicbloom">
+              <!-- Replace the blank screenshot at assets/images/projects/logicbloom.jpg with a real LogicBloom screen capture. -->
+              <img src="assets/images/projects/logicbloom.jpg" alt="Blank screenshot placeholder for LogicBloom Smart UMS" width="1600" height="1000" loading="lazy">
+              <span class="project-art-index">01 / 03</span>
+              <span class="project-art-label"><i></i> SCREENSHOT PLACEHOLDER</span>
+              <span class="project-art-corner" aria-hidden="true">LOGICBLOOM</span>
+            </div>
+            <div class="project-content">
+              <div class="project-meta"><span>UNIVERSITY OPERATIONS</span><span class="project-type">SMART UMS</span></div>
+              <h3>LogicBloom <span>— Smart UMS</span></h3>
+              <p>A university management system bringing essential academic workflows into one place, with modules for students, teachers, attendance, results, and administration.</p>
+              <div class="project-tags" aria-label="Technologies used"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+              <div class="project-action-row">
+                <a class="project-link" data-project-link="logicbloom" target="_blank" rel="noopener noreferrer" hidden><span data-project-link-label>View repository</span><span aria-hidden="true">↗</span></a>
+                <span class="project-link project-link-disabled" data-project-missing="logicbloom">Repository link not configured <span aria-hidden="true">↗</span></span>
+                <span class="asset-path">assets/images/projects/logicbloom.jpg</span>
               </div>
             </div>
-            <span class="art-tag">CAREER TECH / 2026</span>
-          </div>
-          <div class="project-content">
-            <div class="project-meta"><span>01 / FEATURED PROJECT</span><span class="project-status"><i></i> In development</span></div>
-            <h3>AI Campus Placement &amp; Career Intelligence Portal</h3>
-            <p class="project-description">A placement and career-support platform designed around students, recruiters, TPOs, and administrators. The goal is to make placement activity easier to manage and help students understand their career readiness.</p>
-            <div class="project-features"><span>Student & recruiter portals</span><span>Placement tracking</span><span>Eligibility rules</span><span>Career-fit scoring</span><span>Skill-gap insights</span><span>Placement analytics</span></div>
-            <p class="project-note">Planned or in-progress features should be described as complete only after they're implemented and tested.</p>
-            <div class="project-bottom"><p class="project-tech">PHP 8.2+ · MySQL · JavaScript · Bootstrap 5 · Chart.js</p><a class="project-link" href="https://github.com/shradhayjoshi1921-dotcom/Campus" target="_blank" rel="noopener noreferrer">View repository <span>↗</span></a></div>
-          </div>
-        </article>
+          </article>
 
-        <article class="project-card">
-          <div class="project-art erp-art" aria-hidden="true">
-            <div class="erp-mark"><span>LB</span><i></i><i></i><i></i></div>
-            <div class="erp-label">LEARN · MANAGE · GROW</div>
-          </div>
-          <div class="project-content">
-            <div class="project-meta"><span>02 / EDUCATION ERP</span><span class="project-status"><i></i> Project</span></div>
-            <h3>LogicBloom ERP</h3>
-            <p class="project-description">An educational ERP concept built to bring academic and administrative workflows into one system, with role-specific modules for institutional staff, teachers, and students.</p>
-            <div class="project-features"><span>Principal module</span><span>Teacher management</span><span>Student management</span><span>Attendance</span><span>Marks &amp; results</span><span>Salary management</span></div>
-            <div class="project-bottom"><p class="project-tech">PHP · MySQL · JavaScript · HTML · CSS</p><a class="project-link" href="https://github.com/shradhayjoshi1921-dotcom" target="_blank" rel="noopener noreferrer">Find on GitHub <span>↗</span></a></div>
-          </div>
-        </article>
+          <article class="project-card" data-reveal>
+            <div class="project-art project-art-campus">
+              <!-- Replace the blank screenshot at assets/images/projects/campus.jpg with a real Campus Placement Portal screen capture. -->
+              <img src="assets/images/projects/campus.jpg" alt="Blank screenshot placeholder for Campus Placement Portal" width="1600" height="1000" loading="lazy">
+              <span class="project-art-index">02 / 03</span>
+              <span class="project-art-label"><i></i> SCREENSHOT PLACEHOLDER</span>
+              <span class="project-art-corner" aria-hidden="true">CAMPUS</span>
+            </div>
+            <div class="project-content">
+              <div class="project-meta"><span>CAREER &amp; PLACEMENT</span><span class="project-type">PORTAL</span></div>
+              <h3>Campus <span>— Placement Portal</span></h3>
+              <p>A campus placement management platform with dedicated portals for students, recruiters, TPOs, and administrators.</p>
+              <div class="project-tags" aria-label="Technologies used"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
+              <div class="project-action-row">
+                <a class="project-link" data-project-link="campus" target="_blank" rel="noopener noreferrer" hidden>View on GitHub <span aria-hidden="true">↗</span></a>
+                <span class="project-link project-link-disabled" data-project-missing="campus">Repository link not configured <span aria-hidden="true">↗</span></span>
+                <span class="asset-path">assets/images/projects/campus.jpg</span>
+              </div>
+            </div>
+          </article>
 
-        <article class="project-card">
-          <div class="project-art chat-art" aria-hidden="true">
-            <div class="chat-preview">
-              <div class="chat-top"><span class="chat-avatar">B</span><div><b>Bubblegum Chat</b><small>Realtime conversations</small></div><span class="chat-dots">•••</span></div>
-              <div class="chat-message received">Hey! Are you online?</div>
-              <div class="chat-message sent">Yep — let's build something. <small>✓✓</small></div>
-              <div class="chat-message received">Nice! 💬</div>
-              <div class="chat-input">Write a message… <span>➤</span></div>
+          <article class="project-card" data-reveal>
+            <div class="project-art project-art-bubblegum">
+              <!-- Replace the blank screenshot at assets/images/projects/bubblegum-chat.jpg with a real Bubblegum Chat screen capture. -->
+              <img src="assets/images/projects/bubblegum-chat.jpg" alt="Blank screenshot placeholder for Bubblegum Chat" width="1600" height="1000" loading="lazy">
+              <span class="project-art-index">03 / 03</span>
+              <span class="project-art-label"><i></i> SCREENSHOT PLACEHOLDER</span>
+              <span class="project-art-corner" aria-hidden="true">BUBBLEGUM</span>
+            </div>
+            <div class="project-content">
+              <div class="project-meta"><span>REAL-TIME MESSAGING</span><span class="project-type">CHAT APP</span></div>
+              <h3>Bubblegum Chat</h3>
+              <p>A real-time chat application centered on a modern messaging interface and live conversations.</p>
+              <div class="project-tags" aria-label="Technologies used"><span>PHP</span><span>WebSockets</span><span>MySQL</span><span>JavaScript</span></div>
+              <div class="project-action-row">
+                <a class="project-link" data-project-link="bubblegumChat" target="_blank" rel="noopener noreferrer" hidden><span data-project-link-label>View repository</span><span aria-hidden="true">↗</span></a>
+                <span class="project-link project-link-disabled" data-project-missing="bubblegumChat">Repository link not configured <span aria-hidden="true">↗</span></span>
+                <span class="asset-path">assets/images/projects/bubblegum-chat.jpg</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects-tail" data-reveal>
+          <span>CURIOUS ABOUT THE CODE?</span>
+          <a class="text-link" data-github-profile target="_blank" rel="noopener noreferrer">Explore my GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience-section section-anchor" id="experience" aria-labelledby="experience-title">
+      <div class="page-container">
+        <div class="section-heading-row" data-reveal>
+          <div>
+            <div class="section-kicker"><span>04</span><span class="kicker-rule"></span> EXPERIENCE &amp; EDUCATION</div>
+            <h2 class="display-heading" id="experience-title">Built on <span>learning.</span></h2>
+          </div>
+          <p class="section-intro">Professional experience, training, and education—shared without invented dates or inflated claims.</p>
+        </div>
+
+        <div class="journey-grid">
+          <div class="journey-column">
+            <h3 class="column-label"><span>01</span> EXPERIENCE &amp; CERTIFICATIONS</h3>
+            <div class="timeline">
+              <article class="timeline-item" data-reveal>
+                <span class="timeline-node" aria-hidden="true"></span>
+                <div class="timeline-card"><span class="timeline-category">PROFESSIONAL EXPERIENCE</span><h4>Web Development Intern</h4><p>Axlero Solutions</p></div>
+              </article>
+              <article class="timeline-item" data-reveal>
+                <span class="timeline-node" aria-hidden="true"></span>
+                <div class="timeline-card"><span class="timeline-category">TECHNICAL TRAINING</span><h4>Java Training</h4><p>Excellence Technology</p></div>
+              </article>
+              <article class="timeline-item" data-reveal>
+                <span class="timeline-node" aria-hidden="true"></span>
+                <div class="timeline-card"><span class="timeline-category">PROFESSIONAL DEVELOPMENT</span><h4>Personality Development Course</h4></div>
+              </article>
+              <article class="timeline-item" data-reveal>
+                <span class="timeline-node" aria-hidden="true"></span>
+                <div class="timeline-card"><span class="timeline-category">CERTIFICATION</span><h4>Wadhwani Foundation Certification</h4></div>
+              </article>
+              <article class="timeline-item" data-reveal>
+                <span class="timeline-node" aria-hidden="true"></span>
+                <div class="timeline-card"><span class="timeline-category">CAREER READINESS</span><h4>Job Ready Program</h4></div>
+              </article>
             </div>
           </div>
-          <div class="project-content">
-            <div class="project-meta"><span>03 / REAL-TIME WEB APP</span><span class="project-status"><i></i> Project</span></div>
-            <h3>Bubblegum Chat</h3>
-            <p class="project-description">A real-time chat application exploring messaging interfaces and live communication with PHP and WebSocket technology.</p>
-            <div class="project-features"><span>Chat interface</span><span>Real-time messaging</span><span>PHP backend</span><span>WebSocket learning</span></div>
-            <div class="project-bottom"><p class="project-tech">PHP · WebSocket · JavaScript · MySQL</p><a class="project-link" href="https://github.com/shradhayjoshi1921-dotcom" target="_blank" rel="noopener noreferrer">Find on GitHub <span>↗</span></a></div>
-          </div>
-        </article>
 
-        <div class="projects-footer"><p>Want to see more experiments and source code?</p><a href="https://github.com/shradhayjoshi1921-dotcom" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Explore GitHub ↗</a></div>
-      </div>
-    </section>
-
-    <section class="section engineering-section">
-      <div class="section-container">
-        <div class="engineering-box">
-          <div class="engineering-left"><p class="section-number">05 — HOW I WORK</p><h2>Think clearly.<br><span>Build relentlessly.</span></h2><p>I care about understanding the problem, not just getting code to run.</p></div>
-          <div class="engineering-right">
-            <article class="engineering-item"><span>01</span><div><h3>Understand the problem</h3><p>Break requirements into smaller, testable tasks before choosing an implementation.</p></div></article>
-            <article class="engineering-item"><span>02</span><div><h3>Build and debug</h3><p>Trace issues to their root cause, validate assumptions, and improve the solution step by step.</p></div></article>
-            <article class="engineering-item"><span>03</span><div><h3>Use AI with judgment</h3><p>Use agentic tools to accelerate development while reviewing, testing, and understanding the output.</p></div></article>
+          <div class="education-column">
+            <h3 class="column-label"><span>02</span> EDUCATION</h3>
+            <article class="education-card education-card-current" data-reveal>
+              <span class="education-status"><i></i> CURRENTLY PURSUING</span>
+              <span class="education-glyph" aria-hidden="true">BTech</span>
+              <h4>BTech Computer Science &amp; Engineering</h4>
+              <p>Currently pursuing</p>
+            </article>
+            <article class="education-card" data-reveal>
+              <span class="education-status"><i></i> COMPLETED</span>
+              <span class="education-glyph" aria-hidden="true">CE</span>
+              <h4>Computer Engineering Diploma</h4>
+              <p>Government Millennium Polytechnic Chamba</p>
+            </article>
+            <div class="education-note" data-reveal><span aria-hidden="true">✳</span><p>A strong technical base, with more to learn and build.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="education" class="section section-anchor">
-      <div class="section-container">
-        <div class="section-heading centered"><p class="section-number">06 — EDUCATION &amp; TRAINING</p><h2>Building the <span>foundation.</span></h2></div>
-        <div class="timeline">
-          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-content"><span class="timeline-date">2026 — PRESENT</span><h3>B.Tech — Computer Science &amp; Engineering</h3><p>Swami Vivekanand Institute of Engineering and Technology (SVIET)</p><span class="timeline-tag">Lateral entry · 3rd semester</span></div></article>
-          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-content"><span class="timeline-date">2023 — 2026</span><h3>Diploma — Computer Engineering</h3><p>Government Millennium Polytechnic, Chamba</p><span class="timeline-tag">Final CGPA: 6.80</span></div></article>
-          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-content"><span class="timeline-date">JANUARY 2025</span><h3>Java Training</h3><p>Excellence Technology</p><span class="timeline-tag">Grade A+</span></div></article>
-          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-content"><span class="timeline-date">2025</span><h3>Job Ready Program</h3><p>Wadhwani Foundation</p><span class="timeline-tag">Score: 91%</span></div></article>
+    <section class="section github-section" id="github" aria-labelledby="github-title">
+      <div class="page-container">
+        <div class="section-heading-row github-heading" data-reveal>
+          <div>
+            <div class="section-kicker"><span>05</span><span class="kicker-rule"></span> GITHUB / DEVELOPER ACTIVITY</div>
+            <h2 class="display-heading" id="github-title">The work stays <span>in motion.</span></h2>
+          </div>
+          <div class="github-live-status" id="githubStatus" role="status" aria-live="polite"><span class="status-dot"></span> Connecting to GitHub…</div>
+        </div>
+
+        <div class="github-grid">
+          <article class="github-panel github-profile-panel" data-reveal>
+            <div class="github-panel-heading"><span class="panel-symbol" aria-hidden="true">GH</span><div><span class="panel-overline">PUBLIC PROFILE</span><h3>Developer snapshot</h3></div></div>
+            <a class="text-link github-profile-link" data-github-profile target="_blank" rel="noopener noreferrer">Open GitHub profile <span aria-hidden="true">↗</span></a>
+            <div class="github-stats" aria-label="Live GitHub profile statistics">
+              <div><strong data-gh-stat="public_repos">—</strong><span>Public repos</span></div>
+              <div><strong data-gh-stat="followers">—</strong><span>Followers</span></div>
+              <div><strong data-gh-stat="following">—</strong><span>Following</span></div>
+            </div>
+            <p class="live-data-note">Live profile data from the GitHub public API. No contribution totals are estimated.</p>
+          </article>
+
+          <article class="github-panel contribution-panel" data-reveal>
+            <div class="github-panel-heading"><span class="panel-symbol panel-symbol-accent" aria-hidden="true">▦</span><div><span class="panel-overline">ACTIVITY VISUALIZATION</span><h3>Contribution graph</h3></div><span class="placeholder-pill">PLACEHOLDER</span></div>
+            <div class="contribution-placeholder" role="img" aria-label="Empty contribution graph placeholder. No contribution activity is displayed or estimated.">
+              <div class="contribution-cells" aria-hidden="true"></div>
+              <div class="contribution-overlay"><span>NO GRAPH DATA CONNECTED</span><small>Add a trusted contribution data source to show activity here.</small></div>
+            </div>
+            <a class="text-link" data-github-activity target="_blank" rel="noopener noreferrer">View activity on GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="github-panel repository-panel" data-reveal>
+            <div class="github-panel-heading"><span class="panel-symbol" aria-hidden="true">⌘</span><div><span class="panel-overline">LIVE REPOSITORY SHOWCASE</span><h3>Recently updated</h3></div><span class="live-api-label">PUBLIC API</span></div>
+            <div class="repository-list" id="githubRepositories"><p class="repository-message">Loading public repositories…</p></div>
+          </article>
+
+          <article class="github-panel technology-panel" data-reveal>
+            <div class="github-panel-heading"><span class="panel-symbol panel-symbol-accent" aria-hidden="true">⌁</span><div><span class="panel-overline">TECHNOLOGY SIGNALS</span><h3>Seen in public repos</h3></div></div>
+            <p>Primary languages reported by the repositories shown here. This list updates from live GitHub data.</p>
+            <div class="live-languages" id="githubLanguages"><span class="language-placeholder">Awaiting live repository data…</span></div>
+            <span class="technology-footnote">No percentages or contribution counts are fabricated.</span>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section certifications-section">
-      <div class="section-container cert-grid">
-        <div class="cert-intro"><p class="section-number">07 — CERTIFICATIONS</p><h2>Keep learning.<br><span>Keep improving.</span></h2><p>Training and programs that support my technical and professional development.</p></div>
-        <div class="cert-list">
-          <article class="cert-item"><span class="cert-icon">✓</span><div><h3>Java Training</h3><p>Excellence Technology · Grade A+</p></div><span class="cert-year">2025</span></article>
-          <article class="cert-item"><span class="cert-icon">✓</span><div><h3>Job Ready Program</h3><p>Wadhwani Foundation · 91%</p></div><span class="cert-year">2025</span></article>
-          <article class="cert-item"><span class="cert-icon">✓</span><div><h3>Personality Development</h3><p>Excellence Technology</p></div><span class="cert-year">2025</span></article>
-        </div>
-      </div>
-    </section>
+    <section class="section contact-section section-anchor" id="contact" aria-labelledby="contact-title">
+      <div class="contact-backdrop" aria-hidden="true"><span></span><span></span></div>
+      <div class="page-container">
+        <div class="section-kicker" data-reveal><span>06</span><span class="kicker-rule"></span> MAKE SOMETHING REAL</div>
+        <div class="contact-layout">
+          <div class="contact-copy" data-reveal>
+            <h2 class="display-heading" id="contact-title">Have an Idea?<br><span>Let’s Build It.</span></h2>
+            <p>Have a product idea, a problem worth solving, or an opportunity to collaborate? I’d love to hear what you’re thinking.</p>
+            <a class="contact-email" data-email-link>
+              <span class="email-icon" aria-hidden="true">↗</span>
+              <span><small>WRITE TO ME</small><strong data-email>Loading contact…</strong></span>
+            </a>
+            <div class="contact-socials" aria-label="Social links">
+              <a class="social-link" data-social="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+              <a class="social-link" data-social="github" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+              <a class="social-link social-link-instagram" data-social="instagram" target="_blank" rel="noopener noreferrer">Instagram <small data-social-state="instagram">URL not configured</small></a>
+            </div>
+          </div>
 
-    <section id="contact" class="section contact-section section-anchor">
-      <div class="contact-glow" aria-hidden="true"></div>
-      <div class="section-container contact-content">
-        <p class="section-number">08 — CONTACT</p>
-        <h2>Let's build something <span>meaningful.</span></h2>
-        <p>Have an idea, opportunity, or interesting problem? Let's connect.</p>
-        <a class="email-link" href="mailto:shradhayjoshi1921@gmail.com">shradhayjoshi1921@gmail.com <span>↗</span></a>
-        <div class="contact-links"><a href="https://www.linkedin.com/in/shradhay-joshi-4b28b73a7/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/shradhayjoshi1921-dotcom" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-        <p class="resume-note">To add a resume button, place your PDF in this folder and link it here.</p>
+          <form class="contact-form" id="contactForm" data-reveal>
+            <div class="form-heading"><span>START A CONVERSATION</span><span class="form-index">01 — 04</span></div>
+            <div class="form-row">
+              <label class="form-field"><span>Your name</span><input name="name" type="text" autocomplete="name" placeholder="Jane Smith" required maxlength="100"></label>
+              <label class="form-field"><span>Your email</span><input name="email" type="email" autocomplete="email" placeholder="jane@example.com" required maxlength="160"></label>
+            </div>
+            <label class="form-field"><span>Subject</span><input name="subject" type="text" placeholder="What would you like to build?" required maxlength="160"></label>
+            <label class="form-field"><span>Message</span><textarea name="message" rows="4" placeholder="A little about your idea, project, or question…" required maxlength="4000"></textarea></label>
+            <button class="button button-primary form-submit" type="submit"><span>Prepare message</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" /></svg></button>
+            <p class="form-note">Opens a draft in your email app. Nothing is sent or stored by this site.</p>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="footer-container"><a href="#home" class="footer-logo"><span>&lt;</span>SHRADHAY<span>/&gt;</span></a><p>Built with code, curiosity &amp; a builder's mindset.</p><p class="copyright">© <span id="year">2026</span> Shradhay · All rights reserved.</p></div></footer>
+  <footer class="site-footer">
+    <div class="page-container footer-inner">
+      <a class="brand footer-brand" href="#home" aria-label="Back to top"><span class="brand-mark" aria-hidden="true">S<span>.</span></span><span class="brand-name" data-person-brand>SHRADHAY</span></a>
+      <p>Made with curiosity, code &amp; intent.</p>
+      <a class="back-to-top" href="#home">BACK TO TOP <span aria-hidden="true">↑</span></a>
+      <span class="copyright">© <span id="currentYear">2026</span> Shradhay</span>
+    </div>
+  </footer>
+
+  <noscript><p class="noscript-note">This portfolio uses JavaScript for navigation, live GitHub data, and contact details. Please enable JavaScript to use those features.</p></noscript>
 </body>
 </html>
