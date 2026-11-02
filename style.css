@@ -824,6 +824,33 @@ body.has-pointer .cursor-glow { opacity: 1; }
   .footer-inner { grid-template-columns: 1fr 1fr auto; }
   .copyright { grid-column: 2 / -1; justify-self: end; }
 }
+@media (max-width: 780px) {
+  .hero { min-height: auto; padding: 78px 0 100px; }
+  .hero-layout { grid-template-columns: 1fr; gap: 36px; }
+  .hero-title { font-size: clamp(3.55rem, 8.6vw, 5.4rem); }
+  .hero-visual { width: min(100%, 560px); min-height: auto; justify-self: center; padding: 24px 25px 48px; }
+  .desktop-assembly { width: 100%; }
+  .visual-rings { width: 112%; }
+  .tech-float-react { top: 16%; left: 1%; }
+  .tech-float-ai { top: 39%; right: 1%; }
+  .tech-float-php { bottom: 18%; left: 1%; }
+  .section-heading-row { display: block; margin-bottom: 36px; }
+  .section-intro { max-width: 580px; margin-top: 17px; }
+  .about-intro { grid-template-columns: 1fr; gap: 24px; }
+  .about-story { max-width: 700px; }
+  .about-metrics { margin-top: 46px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card-featured { grid-column: auto; grid-template-columns: 1fr; }
+  .project-card-featured .project-art { min-height: 310px; }
+  .project-art { min-height: 285px; }
+  .journey-grid { grid-template-columns: 1fr; gap: 42px; }
+  .education-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+  .education-column > .column-label, .education-note { grid-column: 1 / -1; }
+  .education-card { min-height: 180px; }
+  .contact-layout { grid-template-columns: 1fr; gap: 36px; }
+  .contact-copy { max-width: 680px; }
+}
+
 @media (max-width: 680px) {
   .page-container { width: calc(100% - 38px); }
   .section { padding: 87px 0; }
@@ -895,7 +922,7 @@ body.has-pointer .cursor-glow { opacity: 1; }
   .projects-tail { align-items: flex-start; flex-direction: column; gap: 11px; }
   .journey-grid { grid-template-columns: 1fr; gap: 45px; }
   .timeline { gap: 10px; }
-  .education-column { gap: 11px; }
+  .education-column { display: flex; flex-direction: column; gap: 11px; }
   .education-card { min-height: 170px; }
   .github-heading { display: flex; align-items: flex-start; flex-direction: column; gap: 16px; }
   .github-grid { grid-template-columns: 1fr; gap: 11px; }
