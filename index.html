@@ -81,23 +81,60 @@
           </div>
         </div>
 
-        <div class="hero-visual" data-parallax>
+        <div class="hero-visual developer-scene" data-parallax role="img" aria-label="Animated developer desktop with a code editor, project files, and terminal">
           <div class="visual-rings" aria-hidden="true"><span></span><span></span><span></span></div>
-          <span class="visual-coordinate coordinate-top" aria-hidden="true">PROFILE / 01</span>
-          <span class="visual-coordinate coordinate-bottom" aria-hidden="true">BUILT WITH INTENT</span>
+          <span class="visual-coordinate coordinate-top" aria-hidden="true">WORKSPACE / 01</span>
+          <span class="visual-coordinate coordinate-bottom" aria-hidden="true">IDEA → INTERFACE</span>
           <span class="tech-float tech-float-react" aria-hidden="true"><i>◈</i> React.js</span>
           <span class="tech-float tech-float-ai" aria-hidden="true"><i>✳</i> AI + code</span>
           <span class="tech-float tech-float-php" aria-hidden="true"><i>⌘</i> PHP</span>
-          <figure class="portrait-card">
-            <div class="portrait-frame">
-              <!-- Replace this intentionally blank image with your own portrait at assets/images/profile.jpg. Keep the path or update src, and change the alt text when adding your photo. -->
-              <img class="profile-photo" src="assets/images/profile.jpg" alt="Blank portrait placeholder. Add Shradhay’s personal photograph here." width="800" height="1000" fetchpriority="high">
-              <span class="portrait-edge portrait-edge-top" aria-hidden="true"></span>
-              <span class="portrait-edge portrait-edge-bottom" aria-hidden="true"></span>
+          <div class="code-sigil" aria-hidden="true"><span>&lt;</span><i>/</i><span>&gt;</span></div>
+          <div class="desktop-assembly">
+            <div class="monitor-bezel">
+              <div class="monitor-screen">
+                <div class="screen-topbar">
+                  <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+                  <div class="workspace-path"><span></span> shradhay / workspace</div>
+                  <span class="topbar-mark" aria-hidden="true">⌘ K</span>
+                </div>
+                <div class="screen-workspace">
+                  <aside class="editor-sidebar" aria-hidden="true">
+                    <div class="sidebar-title"><span>EXPLORER</span><i>•••</i></div>
+                    <div class="tree-root"><span>⌄</span> PORTFOLIO</div>
+                    <div class="tree-item"><i class="file-icon icon-html">&lt;&gt;</i> index.html</div>
+                    <div class="tree-item"><i class="file-icon icon-css">#</i> style.css</div>
+                    <div class="tree-item tree-active"><i class="file-icon icon-js">JS</i> script.js</div>
+                    <div class="tree-item"><i class="file-icon icon-json">{ }</i> config.js</div>
+                    <div class="tree-folder"><span>›</span> assets</div>
+                    <div class="tree-folder"><span>›</span> images</div>
+                    <div class="sidebar-branch"><i></i> STATIC SITE</div>
+                  </aside>
+                  <div class="editor-pane">
+                    <div class="editor-tabs"><span class="editor-tab editor-tab-active"><i>JS</i> script.js</span><span class="editor-tab"><i>#</i> style.css</span><span class="editor-tab-end">•••</span></div>
+                    <div class="editor-code" aria-hidden="true">
+                      <div class="code-row"><span class="line-number">01</span><code><b class="syntax-purple">const</b> <b class="syntax-blue">builder</b> = {</code></div>
+                      <div class="code-row"><span class="line-number">02</span><code>&nbsp; name: <b class="syntax-green">"Shradhay"</b>,</code></div>
+                      <div class="code-row"><span class="line-number">03</span><code>&nbsp; focus: [<b class="syntax-green">"web"</b>, <b class="syntax-green">"AI"</b>],</code></div>
+                      <div class="code-row code-row-glow"><span class="line-number">04</span><code>&nbsp; mindset: <b class="syntax-green">"learn · make · iterate"</b>,</code></div>
+                      <div class="code-row"><span class="line-number">05</span><code>&nbsp; build: idea <b class="syntax-purple">=&gt;</b> product(idea)</code></div>
+                      <div class="code-row"><span class="line-number">06</span><code>};</code></div>
+                      <div class="code-row code-row-spacer"><span class="line-number">07</span><code></code></div>
+                      <div class="code-row"><span class="line-number">08</span><code><b class="syntax-blue">await</b> builder.ship();<span class="code-caret"></span></code></div>
+                    </div>
+                    <div class="editor-terminal">
+                      <div class="terminal-heading"><span>TERMINAL</span><span><i></i> READY FOR THE NEXT IDEA</span></div>
+                      <div class="terminal-command"><b>›</b> <span class="typing-command">python3 -m http.server</span></div>
+                      <div class="terminal-result"><span>↳</span> turning ideas into software</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="screen-statusbar"><span><i></i> main</span><span>UTF-8</span><span>JavaScript</span><span>Ln 08, Col 22</span></div>
+              </div>
             </div>
-            <figcaption><span>PERSONAL IMAGE</span><code>assets/images/profile.jpg</code></figcaption>
-          </figure>
-          <div class="visual-caption" aria-hidden="true"><span class="caption-pulse"></span> A SPACE FOR THE HUMAN BEHIND THE BUILD</div>
+            <div class="monitor-neck" aria-hidden="true"></div>
+            <div class="monitor-base" aria-hidden="true"></div>
+          </div>
+          <div class="scene-caption"><span class="caption-pulse"></span> A DESKTOP BUILT AROUND CODE</div>
         </div>
       </div>
       <a class="scroll-cue" href="#about" aria-label="Scroll to the About section"><span class="scroll-cue-line"></span><span>SCROLL TO EXPLORE</span><span class="scroll-cue-index">01 — 06</span></a>
@@ -202,12 +239,17 @@
 
         <div class="project-grid">
           <article class="project-card project-card-featured" data-reveal>
-            <div class="project-art project-art-logicbloom">
-              <!-- Replace the blank screenshot at assets/images/projects/logicbloom.jpg with a real LogicBloom screen capture. -->
-              <img src="assets/images/projects/logicbloom.jpg" alt="Blank screenshot placeholder for LogicBloom Smart UMS" width="1600" height="1000" loading="lazy">
-              <span class="project-art-index">01 / 03</span>
-              <span class="project-art-label"><i></i> SCREENSHOT PLACEHOLDER</span>
-              <span class="project-art-corner" aria-hidden="true">LOGICBLOOM</span>
+            <div class="project-art project-art-logicbloom" aria-hidden="true">
+              <span class="project-art-index">01 / SYSTEM MAP</span>
+              <svg class="project-wires" viewBox="0 0 600 360" preserveAspectRatio="none"><path d="M300 180 122 68M300 180 478 68M300 180 100 268M300 180 500 268M300 198v105"/><circle cx="300" cy="180" r="4"/><circle cx="122" cy="68" r="3"/><circle cx="478" cy="68" r="3"/><circle cx="100" cy="268" r="3"/><circle cx="500" cy="268" r="3"/><circle cx="300" cy="303" r="3"/></svg>
+              <div class="logic-core"><span>LB</span><small>SMART UMS</small><strong>LogicBloom</strong></div>
+              <div class="system-node logic-students"><i></i> STUDENTS</div>
+              <div class="system-node logic-teachers"><i></i> TEACHERS</div>
+              <div class="system-node logic-attendance"><i></i> ATTENDANCE</div>
+              <div class="system-node logic-results"><i></i> RESULTS</div>
+              <div class="system-node logic-admin"><i></i> ADMIN</div>
+              <span class="project-art-label"><i></i> CONNECTED MODULES</span>
+              <span class="project-art-corner">PHP · MYSQL</span>
             </div>
             <div class="project-content">
               <div class="project-meta"><span>UNIVERSITY OPERATIONS</span><span class="project-type">SMART UMS</span></div>
@@ -217,18 +259,21 @@
               <div class="project-action-row">
                 <a class="project-link" data-project-link="logicbloom" target="_blank" rel="noopener noreferrer" hidden><span data-project-link-label>View repository</span><span aria-hidden="true">↗</span></a>
                 <span class="project-link project-link-disabled" data-project-missing="logicbloom">Repository link not configured <span aria-hidden="true">↗</span></span>
-                <span class="asset-path">assets/images/projects/logicbloom.jpg</span>
               </div>
             </div>
           </article>
 
           <article class="project-card" data-reveal>
-            <div class="project-art project-art-campus">
-              <!-- Replace the blank screenshot at assets/images/projects/campus.jpg with a real Campus Placement Portal screen capture. -->
-              <img src="assets/images/projects/campus.jpg" alt="Blank screenshot placeholder for Campus Placement Portal" width="1600" height="1000" loading="lazy">
-              <span class="project-art-index">02 / 03</span>
-              <span class="project-art-label"><i></i> SCREENSHOT PLACEHOLDER</span>
-              <span class="project-art-corner" aria-hidden="true">CAMPUS</span>
+            <div class="project-art project-art-campus" aria-hidden="true">
+              <span class="project-art-index">02 / PORTAL FLOW</span>
+              <svg class="project-wires campus-wires" viewBox="0 0 600 360" preserveAspectRatio="none"><path d="M110 73 270 159M490 73 330 159M110 287 270 201M490 287 330 201"/><circle cx="110" cy="73" r="3"/><circle cx="490" cy="73" r="3"/><circle cx="110" cy="287" r="3"/><circle cx="490" cy="287" r="3"/></svg>
+              <div class="campus-core"><span>↗</span><strong>PLACEMENT</strong><small>PORTAL</small></div>
+              <div class="campus-node campus-student"><i>01</i><span>STUDENT</span></div>
+              <div class="campus-node campus-recruiter"><i>02</i><span>RECRUITER</span></div>
+              <div class="campus-node campus-tpo"><i>03</i><span>TPO</span></div>
+              <div class="campus-node campus-admin"><i>04</i><span>ADMIN</span></div>
+              <span class="project-art-label"><i></i> ONE PLACEMENT WORKFLOW</span>
+              <span class="project-art-corner">PHP · BOOTSTRAP</span>
             </div>
             <div class="project-content">
               <div class="project-meta"><span>CAREER &amp; PLACEMENT</span><span class="project-type">PORTAL</span></div>
@@ -236,20 +281,25 @@
               <p>A campus placement management platform with dedicated portals for students, recruiters, TPOs, and administrators.</p>
               <div class="project-tags" aria-label="Technologies used"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></div>
               <div class="project-action-row">
-                <a class="project-link" data-project-link="campus" target="_blank" rel="noopener noreferrer" hidden>View on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="project-link" data-project-link="campus" target="_blank" rel="noopener noreferrer" hidden><span data-project-link-label>View repository</span><span aria-hidden="true">↗</span></a>
                 <span class="project-link project-link-disabled" data-project-missing="campus">Repository link not configured <span aria-hidden="true">↗</span></span>
-                <span class="asset-path">assets/images/projects/campus.jpg</span>
               </div>
             </div>
           </article>
 
           <article class="project-card" data-reveal>
-            <div class="project-art project-art-bubblegum">
-              <!-- Replace the blank screenshot at assets/images/projects/bubblegum-chat.jpg with a real Bubblegum Chat screen capture. -->
-              <img src="assets/images/projects/bubblegum-chat.jpg" alt="Blank screenshot placeholder for Bubblegum Chat" width="1600" height="1000" loading="lazy">
-              <span class="project-art-index">03 / 03</span>
-              <span class="project-art-label"><i></i> SCREENSHOT PLACEHOLDER</span>
-              <span class="project-art-corner" aria-hidden="true">BUBBLEGUM</span>
+            <div class="project-art project-art-bubblegum" aria-hidden="true">
+              <span class="project-art-index">03 / REAL-TIME STREAM</span>
+              <div class="chat-flow">
+                <div class="chat-endpoint"><span class="endpoint-icon">U1</span><strong>CLIENT A</strong><small>send()</small></div>
+                <div class="chat-channel"><span>WEBSOCKET</span><div class="channel-track"><i></i><i></i><i></i></div><small>bi-directional</small></div>
+                <div class="chat-endpoint chat-endpoint-server"><span class="endpoint-icon">{ }</span><strong>SERVER</strong><small>broadcast()</small></div>
+                <div class="chat-channel chat-channel-reverse"><span>LIVE EVENT</span><div class="channel-track"><i></i><i></i><i></i></div><small>message.sync</small></div>
+                <div class="chat-endpoint"><span class="endpoint-icon">U2</span><strong>CLIENT B</strong><small>receive()</small></div>
+              </div>
+              <div class="chat-activity"><span class="activity-pulse"></span><code>message.emit</code><i>→</i><code>message.sync</code><span class="activity-live">REAL TIME</span></div>
+              <span class="project-art-label"><i></i> MESSAGE DELIVERY FLOW</span>
+              <span class="project-art-corner">PHP · WEBSOCKETS</span>
             </div>
             <div class="project-content">
               <div class="project-meta"><span>REAL-TIME MESSAGING</span><span class="project-type">CHAT APP</span></div>
@@ -259,7 +309,6 @@
               <div class="project-action-row">
                 <a class="project-link" data-project-link="bubblegumChat" target="_blank" rel="noopener noreferrer" hidden><span data-project-link-label>View repository</span><span aria-hidden="true">↗</span></a>
                 <span class="project-link project-link-disabled" data-project-missing="bubblegumChat">Repository link not configured <span aria-hidden="true">↗</span></span>
-                <span class="asset-path">assets/images/projects/bubblegum-chat.jpg</span>
               </div>
             </div>
           </article>
@@ -344,20 +393,18 @@
             <div class="github-panel-heading"><span class="panel-symbol" aria-hidden="true">GH</span><div><span class="panel-overline">PUBLIC PROFILE</span><h3>Developer snapshot</h3></div></div>
             <a class="text-link github-profile-link" data-github-profile target="_blank" rel="noopener noreferrer">Open GitHub profile <span aria-hidden="true">↗</span></a>
             <div class="github-stats" aria-label="Live GitHub profile statistics">
-              <div><strong data-gh-stat="public_repos">—</strong><span>Public repos</span></div>
-              <div><strong data-gh-stat="followers">—</strong><span>Followers</span></div>
-              <div><strong data-gh-stat="following">—</strong><span>Following</span></div>
+              <div><strong data-gh-stat="public_repos" class="is-data-state">Loading</strong><span>Public repos</span></div>
+              <div><strong data-gh-stat="followers" class="is-data-state">Loading</strong><span>Followers</span></div>
+              <div><strong data-gh-stat="following" class="is-data-state">Loading</strong><span>Following</span></div>
             </div>
-            <p class="live-data-note">Live profile data from the GitHub public API. No contribution totals are estimated.</p>
+            <p class="live-data-note">Live profile values fetched directly from GitHub’s public API.</p>
           </article>
 
-          <article class="github-panel contribution-panel" data-reveal>
-            <div class="github-panel-heading"><span class="panel-symbol panel-symbol-accent" aria-hidden="true">▦</span><div><span class="panel-overline">ACTIVITY VISUALIZATION</span><h3>Contribution graph</h3></div><span class="placeholder-pill">PLACEHOLDER</span></div>
-            <div class="contribution-placeholder" role="img" aria-label="Empty contribution graph placeholder. No contribution activity is displayed or estimated.">
-              <div class="contribution-cells" aria-hidden="true"></div>
-              <div class="contribution-overlay"><span>NO GRAPH DATA CONNECTED</span><small>Add a trusted contribution data source to show activity here.</small></div>
-            </div>
-            <a class="text-link" data-github-activity target="_blank" rel="noopener noreferrer">View activity on GitHub <span aria-hidden="true">↗</span></a>
+          <article class="github-panel activity-panel" data-reveal>
+            <div class="github-panel-heading"><span class="panel-symbol panel-symbol-accent" aria-hidden="true">⌁</span><div><span class="panel-overline">PUBLIC REPOSITORY ACTIVITY</span><h3>Latest updates</h3></div><span class="live-api-label">LIVE</span></div>
+            <p class="activity-intro">Update dates are read from each repository’s public metadata.</p>
+            <div class="activity-feed" id="githubActivityFeed"><p class="repository-message">Loading recent repository updates…</p></div>
+            <a class="text-link" data-github-activity target="_blank" rel="noopener noreferrer">See activity on GitHub <span aria-hidden="true">↗</span></a>
           </article>
 
           <article class="github-panel repository-panel" data-reveal>
@@ -368,7 +415,7 @@
           <article class="github-panel technology-panel" data-reveal>
             <div class="github-panel-heading"><span class="panel-symbol panel-symbol-accent" aria-hidden="true">⌁</span><div><span class="panel-overline">TECHNOLOGY SIGNALS</span><h3>Seen in public repos</h3></div></div>
             <p>Primary languages reported by the repositories shown here. This list updates from live GitHub data.</p>
-            <div class="live-languages" id="githubLanguages"><span class="language-placeholder">Awaiting live repository data…</span></div>
+            <div class="live-languages" id="githubLanguages"><span class="language-state">Loading languages from public repositories…</span></div>
             <span class="technology-footnote">No percentages or contribution counts are fabricated.</span>
           </article>
         </div>
