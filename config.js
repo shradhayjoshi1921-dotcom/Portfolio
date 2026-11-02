@@ -2,8 +2,8 @@
  * Portfolio configuration
  * -----------------------
  * Update personal contact details and repository URLs here; the page reads
- * these values at runtime. Empty repository/social values stay non-clickable
- * rather than pointing visitors to a guessed or broken URL.
+ * these values at runtime. Projects without a repository URL use the configured
+ * profile link, while unconfigured social accounts remain non-clickable.
  */
 window.PORTFOLIO_CONFIG = {
   personal: {

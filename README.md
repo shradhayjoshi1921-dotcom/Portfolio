@@ -1,39 +1,34 @@
 # Shradhay — Developer Portfolio
 
-A responsive, single-page portfolio built with semantic HTML, modern CSS, and vanilla JavaScript. It is dependency-free and can be hosted as a static site.
+A responsive, single-page portfolio made with semantic HTML, CSS, and vanilla JavaScript. The hero computer and project diagrams are built from HTML, CSS, and SVG—there are no stock photos, generated portraits, fake screenshots, or blank image slots.
 
 ## Run locally
 
-Open `index.html` directly, or start a local static server from the repository root:
+Open `index.html`, or serve the repository root:
 
 ```sh
 python3 -m http.server 4173 --bind 0.0.0.0
 ```
 
-Then visit `http://localhost:4173`.
-
 ## Personalize
 
-Edit **`config.js`** to update Shradhay's name, email, LinkedIn, GitHub, Instagram, GitHub username/API, and project repository URLs. A configured project repository opens directly; when an individual repository URL is blank, its button is clearly labeled and links only to the configured GitHub profile. No repository URLs are guessed.
+Edit **`config.js`** for the name, email, LinkedIn, GitHub, Instagram, GitHub username/API, and project repository URLs. Exact project URLs are used when configured; projects without a known repository link go to the configured GitHub profile rather than a guessed URL. An Instagram URL can be added there when available.
 
-The public GitHub panel reads profile counts and recent repositories from the unauthenticated GitHub REST API when available. The contribution graph is intentionally an empty placeholder—no contribution totals or activity are invented. If the API is unreachable or rate-limited, the page shows a clear fallback state.
+The GitHub panel requests public profile counts, repositories, languages, and repository update dates from GitHub's REST API. Values are live when the API is reachable; failures display an explicit status instead of fabricated data. Contributions are not simulated.
 
-## Replace the blank image assets
+## Portfolio visuals and motion
 
-- `assets/images/profile.jpg` — replace with a personal portrait. The hero container is intentionally blank; no generated, stock, or avatar image is included. Update its `alt` text in `index.html` when you add your photo.
-- `assets/images/projects/logicbloom.jpg`
-- `assets/images/projects/campus.jpg`
-- `assets/images/projects/bubblegum-chat.jpg`
-
-Replace each project image with a real screenshot at the same path (or update the corresponding `src` in `index.html`). The current files are small, solid-color blank placeholders.
+- The hero desktop/editor is a CSS-built illustration with a type-on terminal command, animated caret and syntax highlight, drifting code glyph, floating technology tags, and subtle pointer tilt.
+- Project cards use animated system maps for LogicBloom, Campus, and Bubblegum Chat—not screenshots or photo placeholders.
+- Scroll reveals, active navigation, responsive menu, cursor glow, and magnetic CTAs respect reduced-motion preferences.
 
 ## Contact form
 
-The form validates its fields and opens a prefilled draft in the visitor's email application using the address in `config.js`. It does not submit to a server or store form data.
+The form validates its fields and opens a prefilled draft in the visitor's email app using the address in `config.js`. It does not submit to a server or store form data.
 
 ## Files
 
-- `index.html` — page structure, metadata, content, and replaceable image paths
-- `style.css` — responsive visual system, animations, reduced-motion support
-- `script.js` — navigation, reveal/micro-interactions, contact form, and live GitHub data
+- `index.html` — page structure, metadata, content, and CSS-built illustrations
+- `style.css` — responsive visual system, workspace/project artwork, and motion
+- `script.js` — navigation, interactions, contact form, and live GitHub data
 - `config.js` — editable profile/contact/repository configuration

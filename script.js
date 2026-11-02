@@ -243,18 +243,18 @@
     }
 
     const stage = document.querySelector("[data-parallax]");
-    const portrait = stage?.querySelector(".portrait-frame");
-    if (stage && portrait) {
+    const desktop = stage?.querySelector(".desktop-assembly");
+    if (stage && desktop) {
       stage.addEventListener("pointermove", (event) => {
         const bounds = stage.getBoundingClientRect();
         const x = (event.clientX - bounds.left) / bounds.width;
         const y = (event.clientY - bounds.top) / bounds.height;
-        portrait.style.setProperty("--tilt-x", `${(0.5 - y) * 2.1}deg`);
-        portrait.style.setProperty("--tilt-y", `${(x - 0.5) * 2.1}deg`);
+        desktop.style.setProperty("--tilt-x", `${(0.5 - y) * 2.1}deg`);
+        desktop.style.setProperty("--tilt-y", `${(x - 0.5) * 2.1}deg`);
       }, { passive: true });
       stage.addEventListener("pointerleave", () => {
-        portrait.style.setProperty("--tilt-x", "0deg");
-        portrait.style.setProperty("--tilt-y", "0deg");
+        desktop.style.setProperty("--tilt-x", "0deg");
+        desktop.style.setProperty("--tilt-y", "0deg");
       });
     }
 
@@ -359,15 +359,15 @@
     return owned;
   }
 
-  function renderLanguages(repositories) {
+  function renderLanguages(repositories, emptyMessage = "No language data returned for these repositories.") {
     const container = document.getElementById("githubLanguages");
     if (!container) return;
     const languages = [...new Set(repositories.map((repo) => repo.language).filter((language) => typeof language === "string" && language.trim()))];
     if (!languages.length) {
-      const placeholder = document.createElement("span");
-      placeholder.className = "language-placeholder";
-      placeholder.textContent = "No language data returned for these repositories.";
-      container.replaceChildren(placeholder);
+      const state = document.createElement("span");
+      state.className = "language-state";
+      state.textContent = emptyMessage;
+      container.replaceChildren(state);
       return;
     }
     const fragment = document.createDocumentFragment();
@@ -378,6 +378,57 @@
       fragment.append(chip);
     });
     container.replaceChildren(fragment);
+  }
+
+  function setActivityMessage(message) {
+    const feed = document.getElementById("githubActivityFeed");
+    if (!feed) return;
+    const paragraph = document.createElement("p");
+    paragraph.className = "repository-message";
+    paragraph.textContent = message;
+    feed.replaceChildren(paragraph);
+  }
+
+  function setGithubStatsUnavailable() {
+    document.querySelectorAll("[data-gh-stat]").forEach((element) => {
+      element.textContent = "Unavailable";
+      element.classList.remove("is-live-value");
+      element.classList.add("is-data-state");
+    });
+  }
+
+  function renderRepositoryActivity(repositories, username) {
+    const feed = document.getElementById("githubActivityFeed");
+    if (!feed) return;
+    const dateFormat = new Intl.DateTimeFormat(undefined, { month: "short", day: "numeric", year: "numeric" });
+    const recent = repositories
+      .filter((repo) => repo && typeof repo.updated_at === "string")
+      .map((repo) => ({ repo, updated: new Date(repo.updated_at) }))
+      .filter(({ repo, updated }) => Number.isFinite(updated.getTime()) && allowedRepositoryUrl(repo.html_url, username))
+      .slice(0, 3);
+
+    if (!recent.length) {
+      setActivityMessage("No recent public repository updates to display.");
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    recent.forEach(({ repo, updated }) => {
+      const link = document.createElement("a");
+      link.className = "activity-row";
+      link.href = allowedRepositoryUrl(repo.html_url, username);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      const name = document.createElement("strong");
+      name.className = "activity-repo";
+      name.textContent = repo.name || "Public repository";
+      const date = document.createElement("span");
+      date.className = "activity-date";
+      date.textContent = `Updated ${dateFormat.format(updated)}`;
+      link.append(name, date);
+      fragment.append(link);
+    });
+    feed.replaceChildren(fragment);
   }
 
   async function fetchJson(url, signal) {
@@ -395,8 +446,10 @@
     const apiBase = validWebUrl(config.github?.apiBase);
     if (!username || !/^[A-Za-z0-9-]+$/.test(username) || !apiBase || new URL(apiBase).hostname !== "api.github.com") {
       setGithubStatus("Add a GitHub username and API base in config.js", false);
+      setGithubStatsUnavailable();
       setRepositoryMessage("Configure a public GitHub username in config.js to load repositories.");
-      renderLanguages([]);
+      setActivityMessage("Configure a public GitHub username to see repository update dates.");
+      renderLanguages([], "Add a GitHub username to load public repository languages.");
       return;
     }
 
@@ -412,7 +465,8 @@
         fetchJson(profileUrl, controller.signal),
         fetchJson(reposUrl, controller.signal)
       ]);
-      let hasLiveData = false;
+      let profileLive = false;
+      let repositoriesLive = false;
       let repoList = [];
 
       const profileResult = results[0];
@@ -425,41 +479,45 @@
         };
         document.querySelectorAll("[data-gh-stat]").forEach((element) => {
           const value = stats[element.dataset.ghStat];
-          element.textContent = Number.isFinite(value) ? numberFormat.format(value) : "—";
+          if (Number.isFinite(value)) {
+            element.textContent = numberFormat.format(value);
+            element.classList.remove("is-data-state");
+            element.classList.add("is-live-value");
+          } else {
+            element.textContent = "Unavailable";
+            element.classList.remove("is-live-value");
+            element.classList.add("is-data-state");
+          }
         });
-        hasLiveData = true;
+        profileLive = true;
+      } else {
+        setGithubStatsUnavailable();
       }
 
       const reposResult = results[1];
       if (reposResult.status === "fulfilled" && Array.isArray(reposResult.value)) {
         repoList = renderRepositories(reposResult.value, username);
+        renderRepositoryActivity(repoList, username);
         renderLanguages(repoList);
-        hasLiveData = true;
-      } else if (reposResult.status === "rejected") {
+        repositoriesLive = true;
+      } else {
         setRepositoryMessage("Couldn’t load repositories right now. Use the profile link to browse GitHub.");
-        renderLanguages([]);
+        setActivityMessage("Recent repository update dates are unavailable right now.");
+        renderLanguages([], "Public language data is unavailable right now.");
       }
 
-      if (hasLiveData) setGithubStatus("Live data · GitHub public API", true);
+      if (profileLive && repositoriesLive) setGithubStatus("Live data · GitHub public API", true);
+      else if (profileLive || repositoriesLive) setGithubStatus("Partial data · GitHub public API", true);
       else setGithubStatus("GitHub data is temporarily unavailable", false);
     } catch {
+      setGithubStatsUnavailable();
       setRepositoryMessage("Couldn’t load repositories right now. Use the profile link to browse GitHub.");
-      renderLanguages([]);
+      setActivityMessage("Recent repository update dates are unavailable right now.");
+      renderLanguages([], "Public language data is unavailable right now.");
       setGithubStatus("GitHub data is temporarily unavailable", false);
     } finally {
       window.clearTimeout(timeout);
     }
-  }
-
-  function initContributionPlaceholder() {
-    const grid = document.querySelector(".contribution-cells");
-    if (!grid) return;
-    const fragment = document.createDocumentFragment();
-    for (let index = 0; index < 182; index += 1) {
-      const cell = document.createElement("span");
-      fragment.append(cell);
-    }
-    grid.append(fragment);
   }
 
   function initContactForm(email) {
@@ -507,7 +565,6 @@
   initRevealAnimations();
   initCounters();
   initPointerInteractions();
-  initContributionPlaceholder();
   initContactForm(contact.email);
   setCurrentYear();
   loadGithubData();
